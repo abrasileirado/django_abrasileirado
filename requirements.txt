@@ -24,3 +24,4 @@ Django>=1.7
 python_brfied>=0.8.6
 twine==1.12.1
 
+requests>=2.31.0 # not directly required, pinned by Snyk to avoid a vulnerability
