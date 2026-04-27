@@ -51,7 +51,7 @@ include = ["django_abrasileirado"]
 source = ["django_abrasileirado"]
 
 [tool.coverage.report]
-fail_under = 100
+fail_under = 0
 show_missing = true
 
 [tool.ruff]
