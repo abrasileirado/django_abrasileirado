@@ -1,32 +1,79 @@
-# Django BRfied
+# django-abrasileirado
 
-Why I create BRfied? Because localflavors dont validate user data and
-dont apply a mask on inputs.
+Aplicação Django com campos específicos para o contexto brasileiro
+(CPF, CNPJ, CEP, UF, Município, etc).
 
-Thanks for http://digitalbush.com/projects/masked-input-plugin/ 
-jquery-maskedinput
+## Descrição
 
-# LICENSE
+O **django-abrasileirado** fornece campos, formulários, validadores e mixins
+para facilitar o uso de dados brasileiros em projetos Django, como CPF, CNPJ,
+CEP, UF e Município, além de helpers para formulários e modelos.
 
-The MIT License (MIT)
+## Instalação
 
-Copyright (c) 2015 kelsoncm
+1. Instale o pacote (exemplo para uso local):
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+```bash
+pip install -e .
+```
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. Adicione `django_brfied` ao seu `INSTALLED_APPS` no `settings.py` do seu
+   projeto Django:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+```python
+INSTALLED_APPS = [
+ ...
+ 'django_abrasileirado',
+]
+```
 
+## Uso Básico
+
+Exemplo de uso de campos em um modelo:
+
+```python
+from django_abrasileirado.models import CPFField, CNPJField, CEPField
+from django_abrasileirado.models import UFField, MunicipioField
+
+
+class Pessoa(models.Model):
+    cpf = CPFField()
+    cnpj = CNPJField()
+    cep = CEPField()
+    uf = UFField()
+    municipio = MunicipioField()
+```
+
+> Why I create abrasileirado? Because **this is Brazil** (Toretto, 2020).
+
+## Data types
+
+* 🚫 Sim/Não (Enum)
+* 🚫 Estado Civil (Enum) - Instituto Brasileiro de Geografia e Estatística (IBGE)
+* 🚫 Cor/Raça (Enum) - IBGE
+* 🚫 Sexo (Enum) - IBGE
+* 🚫 Gênero (Enum) - IBGE*
+* 🚫 Deficiência (Enum) - IBGE
+* 🚫 Zona de habitação (Enum) - IBGE
+* 🚫 Região geopolítica (Enum) - IBGE
+* 🚫 Unidade federativa (Enum) - IBGE
+* 🚫 CEP - Código de Endereçamento Postal - Empresa de Correio e Telegráfos (ECT)
+* 🚫 CNES - Cadastro Nacional de Estabelecimento de Saúde - DATASUS
+* 🚫 CNS - Cadastro Nacional de Saúde (Cartão SUS) - DATASUS
+* 🚫 CPF - Cadastro de Pessoa Física - Receita Federal do Brasil (RFB)
+* 🚫 CNPJ - Cadastro Nacional de Pessoa Jurídica - RFB
+* 🚫 Modulo11
+* 🚫 ProtocoloIntegrado
+* 🚫 ProtocoloJustica
+* 🚫 PJE
+* 🚫 Boleto
+* 🚫 NFE
+* 🚫 Município
+
+## Licença
+
+[MIT](LICENSE). Veja o arquivo LICENSE.md para mais detalhes.
+
+## Autor
+
+Kelson da Costa Medeiros (<kelsoncm@gmail.com>)
