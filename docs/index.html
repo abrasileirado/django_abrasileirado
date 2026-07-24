@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>django_abrasileirado — Documentação Oficial</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="https://abrasileirado.github.io" class="logo">
+        <span class="logo-badge">🎯</span>
+        <span>Abrasileirado</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#instalacao">Instalação</a></li>
+          <li><a href="#uso">Campos Django</a></li>
+          <li><a href="#desenvolvimento">Dev Local</a></li>
+          <li><a href="https://abrasileirado.github.io">Portal da Suíte</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-container">
+        <span class="hero-tag">Pacote Django</span>
+        <h1>django_abrasileirado 🎯</h1>
+        <p>Campos nativos de Model e Form para Django (CPFField, CNPJField, CEPField, UFField, MunicipioField) com validação e formatação automática.</p>
+      </div>
+    </section>
+
+    <section id="instalacao">
+      <h2 class="section-title">Instalação</h2>
+      <div class="code-box">
+        <pre>pip install django-abrasileirado</pre>
+      </div>
+      <p style="margin-top: 1rem; color: var(--text-muted);">Em seguida, adicione <code>'django_abrasileirado'</code> ao seu <code>INSTALLED_APPS</code> no <code>settings.py</code>.</p>
+    </section>
+
+    <section id="uso">
+      <h2 class="section-title">Exemplo em Models</h2>
+      <div class="card">
+        <div class="code-box">
+          <pre>from django.db import models
+from django_abrasileirado.models import CPFField, CNPJField, CEPField, UFField
+
+class Cliente(models.Model):
+    cpf = CPFField()
+    cnpj = CNPJField(blank=True, null=True)
+    cep = CEPField()
+    uf = UFField()</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="desenvolvimento">
+      <h2 class="section-title">Desenvolvimento Local</h2>
+      <div class="card">
+        <p>Para executar a suíte Django com PostgreSQL no container local:</p>
+        <div class="code-box">
+          <pre>cd ~/projetos/PESSOAL/abrasileirado/workspace
+./abrasileirado cli django</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Organização Abrasileirado — <a href="https://abrasileirado.github.io">Portal Oficial</a></p>
+  </footer>
+
+</body>
+</html>
