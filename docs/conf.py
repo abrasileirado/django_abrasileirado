@@ -4,6 +4,17 @@ import sys
 
 sys.path.insert(0, os.path.abspath(".."))
 
+# O autodoc importa os módulos do app; strings lazy (gettext_lazy) exigem o Django configurado.
+import django  # noqa: E402
+from django.conf import settings  # noqa: E402
+
+if not settings.configured:
+    settings.configure(
+        INSTALLED_APPS=["django.contrib.contenttypes", "django_abrasileirado"],
+        USE_I18N=True,
+    )
+django.setup()
+
 project = "django_abrasileirado"
 
 extensions = [
