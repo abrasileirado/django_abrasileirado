@@ -10,6 +10,7 @@ readme = "README.md"
 license = { file = "LICENSE.md" }
 authors = [{ name = "Kelson da Costa Medeiros", email = "kelsoncm@gmail.com" }]
 requires-python = ">=3.10"
+dependencies = ["django>=4.2"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -47,6 +48,9 @@ Docs = "https://abrasileirado.github.io/django_abrasileirado/"
 where = ["."]
 include = ["django_abrasileirado"]
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [tool.coverage.run]
 source = ["django_abrasileirado"]
 
@@ -59,6 +63,9 @@ line-length = 120
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "S"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
 
 [tool.black]
 line-length = 120

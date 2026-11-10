@@ -74,8 +74,11 @@ class Pessoa(models.Model):
 
 ## Desenvolvimento Local & Documentação
 
-- **Desenvolvimento Local:** Para orquestração do ambiente de desenvolvimento local com Django e PostgreSQL, utilize o repositório privado **[workspace](git@github.com:abrasileirado/workspace.git)**.
-- **Documentação da Suíte:** Acesse o portal oficial da organização em **[https://abrasileirado.github.io](https://abrasileirado.github.io)**.
+* **Desenvolvimento Local:** Para orquestração do ambiente de desenvolvimento
+  local com Django e PostgreSQL, utilize o repositório privado
+  **[workspace](git@github.com:abrasileirado/workspace.git)**.
+* **Documentação da Suíte:** Acesse o portal oficial da organização em
+  **[https://abrasileirado.github.io](https://abrasileirado.github.io)**.
 
 ## Licença
 
@@ -84,4 +87,3 @@ class Pessoa(models.Model):
 ## Autor
 
 Kelson da Costa Medeiros (<kelsoncm@gmail.com>)
-
