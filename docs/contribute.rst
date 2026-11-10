@@ -2,6 +2,7 @@ How to contribute
 =================
 
 .. code-block:: bash
+
     git clone git@github.com:abrasileirado/django_abrasileirado.git ~/projetos/PESSOAL/django_abrasileirado
     code ~/projetos/PESSOAL/django_abrasileirado
 
@@ -14,9 +15,10 @@ before each commit and coverage regression checks before each push.
 **Setup:**
 
 .. code-block:: bash
+
     python -m venv .venv
     # Bash
-    .venv\bin\activate
+    source .venv/bin/activate
     # Powershell
     .\.venv\Scripts\Activate.ps1
     pip install --upgrade pip uv
@@ -27,6 +29,7 @@ before each commit and coverage regression checks before each push.
 Run manually:
 
 .. code-block:: bash
+
     pre-commit run --all-files
     pre-commit run --hook-stage pre-push --all-files
 

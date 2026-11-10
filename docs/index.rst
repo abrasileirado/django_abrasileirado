@@ -75,6 +75,7 @@ Installation
 ------------
 
 .. code-block:: bash
+
    pip install django_abrasileirado
 
 Requires Python 3.10+.
