@@ -18,7 +18,7 @@ before each commit and coverage regression checks before each push.
 
     python -m venv .venv
     # Bash
-    .venv\bin\activate
+    source .venv/bin/activate
     # Powershell
     .\.venv\Scripts\Activate.ps1
     pip install --upgrade pip uv
